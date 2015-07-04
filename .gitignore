@@ -1,0 +1,20 @@
+import MaxPlus, sys, inspect
+
+def getselectednodenames():
+    for node in MaxPlus.SelectionManager.Nodes:
+        print node.Name
+
+def getscenenodenames():
+    for node in MaxPlus.Core.GetRootNode().Children:
+        print node.Name
+
+if __name__ == '__main__':
+    getselectednodenames()
+    getscenenodenames()
+    print MaxPlus.SelectionManager.GetCount()
+    valami = MaxPlus.INode_GetINodeByName("Cylinder001")
+    #valami.Hide()= True
+    print valami.IsObjectHidden()
+    valami.Hide(True)
+
+    #MaxPlus.SelectionManager.DeSelectNode(valami)
