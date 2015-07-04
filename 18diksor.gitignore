@@ -15,6 +15,26 @@ if __name__ == '__main__':
     valami = MaxPlus.INode_GetINodeByName("Cylinder001")
     #valami.Hide()= True
     print valami.IsObjectHidden()
-    valami.Hide(True)
+    valami.Hide(True)    #ide kapom azt az uzenetet hogy: <type 'exceptions.TypeError'> 'bool' object is not callable
+    
+    -------------------------------------------------------------------    
+        a helpben a kovetkezo van:
+        def Hide 	( self,
+		              args 
+	                 )
+	   Hide(INode self, bool onOff)
+	   
+	   Szerintem INode instance a "valami", mert az IsObjectHidden() method szépen kiadja az eredményt a jelenetben lévő Cylinder001re
+	   
+	   Telejes output:
+    	   
+            Cylinder001
+            Box001
+            Sphere001
+            0
+            False
+            -- Runtime error:  Line 18  <module>()
+              <type 'exceptions.TypeError'> 'bool' object is not callable
 
-    #MaxPlus.SelectionManager.DeSelectNode(valami)
+	   
+	   
